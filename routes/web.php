@@ -60,6 +60,7 @@ Route::get('tableuser', function () {
 })->name('admintableuser');
 Route::get('tablebook', [BookingController::class, 'tablebooking'])->name('admintablebook');
 Route::get('tableshop', [BarangController::class, 'tableshop'])->name('admintableshop');
+Route::get('tableuser', [BarangController::class, 'tableshop'])->name('admintableshop');
 
 
 require __DIR__.'/auth.php';
