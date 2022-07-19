@@ -83,42 +83,36 @@ tr:nth-child(even) {
         </div>
     </div>
     <!-- /# sidebar -->
-    <div class="header">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="float-left">
-                        <div class="hamburger sidebar-toggle">
-                            <span class="line"></span>
-                            <span class="line"></span>
-                            <span class="line"></span>
-                        </div>
-                    </div>
-                    <div class="float-right">
-                        <div class="dropdown dib">
-                            <div class="header-icon" data-toggle="dropdown">
-                                <span class="user-avatar">Admin
-                                    <i class="ti-angle-down f-s-10"></i>
-                                </span>
-                                <div class="drop-down dropdown-profile dropdown-menu dropdown-menu-right">
-                                    <div class="dropdown-content-body">
-                                        <ul>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="ti-power-off"></i>
-                                                    <span>Logout</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
+      <div class="nano">
+          <div class="nano-content">
+              <ul>
+                  <div class="logo"><a href="index.html">
+                          <!-- <img src="images/logo.png" alt="" /> --><span>CAR CARE | Admin</span></a></div>
+                  <li class="label">Main</li>
+                  <li><a href="{{ route('adminformbook') }}" class="sidebar-sub-toggle"><i class="ti-home"></i> Dashboard 
+                  </li>
+                  <li><a class="sidebar-sub-toggle"><i class="ti-layout"></i> Form <span
+                      class="sidebar-collapse-icon ti-angle-down"></span></a>
+                   <ul>
+                          <li><a href="{{ route('adminformbook') }}">Booking</a></li>
+                          <li><a href="{{ route('adminformshop') }}">Shop</a></li>
+                  </ul>
+              </li>
+                  <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid2"></i> Table <span
+                              class="sidebar-collapse-icon ti-angle-down"></span></a>
+                      <ul>
+                          <li><a href="page-login.html">User</a></li>
+                          <li><a href="{{ route('admintablebook') }}">Customer Booking</a></li>
+                          <li><a href="{{ route('admintableservice') }}">Service</a></li>
+                          <li><a href="{{route('admintableshop')}}">Shop</a></li>
+                      </ul>
+                  </li>
+                  <li><a><i class="ti-close"></i> Logout</a></li>
+              </ul>
+          </div>
+      </div>
+  </div>
 <section style="background-color: #eee;">
     <div class="container">
       <div class="row d-flex justify-content-center align-items-center h-100">

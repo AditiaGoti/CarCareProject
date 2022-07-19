@@ -48,8 +48,9 @@
                                 class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
                             <li><a href="page-login.html">User</a></li>
-                            <li><a href="{{ route('admintablebook') }}">Booking</a></li>
-                            <li><a href="page-reset-password.html">Shop</a></li>
+                            <li><a href="{{ route('admintablebook') }}">Customer Booking</a></li>
+                            <li><a href="{{ route('admintableservice') }}">Service</a></li>
+                            <li><a href="{{route('admintableshop')}}">Shop</a></li>
                         </ul>
                     </li>
                     <li><a><i class="ti-close"></i> Logout</a></li>

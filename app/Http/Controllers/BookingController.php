@@ -69,5 +69,9 @@ class BookingController extends Controller
         $data = customerbooking::all();
         return view('admin.tablebook', ['data' => $data]);
     }
+    public function tableservice(){
+        $data = booking::all();
+        return view('admin.tableservice', ['data' => $data]);
+    }
    
 }

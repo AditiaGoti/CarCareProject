@@ -24,40 +24,62 @@
     <link href="{{ asset('css/lib/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{ asset('css/lib/helper.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"> </script>  
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"> </script>  
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"></script>
+        <script src="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css"></script>
+        <script src="//code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+        <script src="//cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  
 </head>
-
+<style>
+  h2 {  
+  position: relative;  
+  padding: 10;  
+  margin: 10;  
+  font-family: "Raleway", sans-serif;  
+  font-weight: 300;  
+  font-size: 40px;c  
+  color: red;  
+  -webkit-transition: all 0.4s ease 0s;  
+  -o-transition: all 0.4s ease 0s;  
+  transition: all 0.4s ease 0s;  
+}
+  </style>
 <body>
 
-  <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
-    <div class="nano">
-        <div class="nano-content">
-            <ul>
-                <div class="logo"><a href="index.html">
-                        <!-- <img src="images/logo.png" alt="" /> --><span>CAR CARE | Admin</span></a></div>
-                <li class="label">Main</li>
-                <li><a href="{{ route('adminformbook') }}" class="sidebar-sub-toggle"><i class="ti-home"></i> Dashboard 
-                </li>
-                <li><a class="sidebar-sub-toggle"><i class="ti-layout"></i> Form <span
-                    class="sidebar-collapse-icon ti-angle-down"></span></a>
-                 <ul>
-                        <li><a href="{{ route('adminformbook') }}">Booking</a></li>
-                        <li><a href="{{ route('adminformshop') }}">Shop</a></li>
-                </ul>
-            </li>
-                <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid2"></i> Table <span
-                            class="sidebar-collapse-icon ti-angle-down"></span></a>
-                    <ul>
-                        <li><a href="page-login.html">User</a></li>
-                        <li><a href="{{ route('admintablebook') }}">Customer Booking</a></li>
-                        <li><a href="{{ route('admintableservice') }}">Service</a></li>
-                        <li><a href="{{route('admintableshop')}}">Shop</a></li>
+    <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
+        <div class="nano">
+            <div class="nano-content">
+                <ul>
+                    <div class="logo"><a href="index.html">
+                            <!-- <img src="images/logo.png" alt="" /> --><span>CAR CARE | Admin</span></a></div>
+                    <li class="label">Main</li>
+                    <li><a href="{{ route('adminformbook') }}" class="sidebar-sub-toggle"><i class="ti-home"></i> Dashboard 
+                    </li>
+                    <li><a class="sidebar-sub-toggle"><i class="ti-layout"></i> Form <span
+                        class="sidebar-collapse-icon ti-angle-down"></span></a>
+                     <ul>
+                            <li><a href="{{ route('adminformbook') }}">Booking</a></li>
+                            <li><a href="{{ route('adminformshop') }}">Shop</a></li>
                     </ul>
                 </li>
-                <li><a><i class="ti-close"></i> Logout</a></li>
-            </ul>
+                    <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid2"></i> Table <span
+                                class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="page-login.html">User</a></li>
+                            <li><a href="{{ route('admintablebook') }}">Customer Booking</a></li>
+                            <li><a href="{{ route('admintableservice') }}">Service</a></li>
+                            <li><a href="{{route('admintableshop')}}">Shop</a></li>
+                        </ul>
+                    </li>
+                    <li><a><i class="ti-close"></i> Logout</a></li>
+                </ul>
+            </div>
         </div>
     </div>
-</div>
     <!-- /# sidebar -->
     <div class="header">
         <div class="container-fluid">
@@ -95,58 +117,36 @@
             </div>
         </div>
     </div>
-<section class="vh-100" style="background-color: #eee;">
-    <div class="container h-100">
+<section style="background-color: #eee;">
+    <div class="container">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-lg-12 col-xl-11">
           <div class="card text-black" style="border-radius: 25px;">
             <div class="card-body p-md-5">
               <div class="row justify-content-center">
-                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-  
-                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Add Booking Place</p>
-  
-                  <form class="mx-1 mx-md-4">
-  
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <div class="form-outline flex-fill mb-0">
-                        <label class="form-label" for="form3Example1c">Nama Tempat</label>
-                        <input type="text" id="form3Example1c" class="form-control" />
-                      
-                      </div>
-                    </div>
-  
-                    <div class="d-flex flex-row align-items-center mb-4">
-                     
-                      <div class="form-outline flex-fill mb-0">
-                        <label class="form-label" for="form3Example3c">Price</label>
-                        <input type="" id="" class="form-control" />
-                        
-                      </div>
-                    </div>
-  
-                    <div class="d-flex flex-row align-items-center mb-4">
-                     
-                      <div class="form-outline flex-fill mb-0">
-                        <label class="form-label" for="form3Example4c">Deskripsi</label>
-                        <textarea type="text" id="" class="form-control"></textarea>
-                      
-                      </div>
-                    </div>
-  
-  
-                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                      <button type="button" class="btn btn-primary btn-lg">Save</button>
-                    </div>
-  
-                  </form>
-  
-                </div>
-                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-  
-                    <img src="{{ asset('img/Car_Care.png') }}" class="img-fluid animated" alt="">
-  
-                </div>
+                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Table Service</p>
+                  <div class="table-responsive">
+                    <table id="example" class="table table-striped table-bordered" style="width:100%">
+                      <thead>
+                          <tr>
+                            <th><strong>Id</strong></th>
+                            <th><strong>Tempat</strong></th>
+                            <th><strong>Deskripsi</strong></th>
+                            <th><strong>Harga</strong></th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                        @foreach ($data as $item)    
+                        <tr>
+                            <td>{{ $item->id}}</td>
+                            <td>{{ $item->Tempat}}</td>
+                            <td>{{ $item->deskripsi}}</td>
+                            <td>{{ $item->price}}</td>
+                          </tr>
+                          @endforeach
+                      </tbody>
+                  </table>
+                  </div>
               </div>
             </div>
           </div>
@@ -154,6 +154,11 @@
       </div>
     </div>
   </section>
+  <script>
+  $(document).ready(function () {
+    $('#example').DataTable();
+  });
+  </script>
   <!-- jquery vendor -->
   <script src="{{ asset('js/lib/jquery.min.js')}}"></script>
   <script src="{{ asset('js/lib/jquery.nanoscroller.min.js')}}"></script>
