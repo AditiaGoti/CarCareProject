@@ -120,7 +120,7 @@ tr:nth-child(even) {
           <div class="card text-black" style="border-radius: 25px;">
             <div class="card-body p-md-5">
               <div class="row justify-content-center">
-                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Table Book</p>
+                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Table Shop</p>
                   <div class="table-responsive">
                     <table id="example" class="table table-striped table-bordered " style="width:100%">
                       <thead>
