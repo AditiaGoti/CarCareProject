@@ -73,13 +73,12 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto" href="{{ route('dashboard') }}">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#services">Services</a></li>
+                    <li><a class="nav-link scrollto " href="{{ route('dashboard') }}">Home</a></li>
+                    <li><a class="nav-link scrollto active" href="#services">Services</a></li>
                     <li><a class="nav-link scrollto" href="#about">About Us</a></li>
-                    <li><a class="nav-link   scrollto" href="{{ route('shop.index') }}">Shop</a></li>
-                    <li><a class="nav-link">
-                            <div style="color:white">{{ Auth::user()->email }}</div>
-                        </a></li>
+                    <li><a class="nav-link   scrollto"href="{{ route('shop.index') }}">Shop</a></li>
+                    <li><a class="nav-link scrollto" href="userprofile/{{Auth::user()->id }}"><div style="color:white">{{ Auth::user()->email }}</div></a></li>
+                  
         </div>
 
 

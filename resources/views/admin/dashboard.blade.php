@@ -8,22 +8,28 @@
     <title>CAR CARE : Admin Dashboard</title>
     <!-- ================= Favicon ================== -->
 
-      <!-- Favicons -->
+    <!-- Favicons -->
 
-      <link href="{{ asset('/img/Car_care__3.png') }}" rel="icon">
-      <link href="{{ asset('/img/logo.png') }}" rel="apple-touch-icon">
+    <link href="{{ asset('/img/Car_care__3.png') }}" rel="icon">
+    <link href="{{ asset('/img/logo.png') }}" rel="apple-touch-icon">
     <!-- Styles -->
-    <link href="{{ asset('css/lib/calendar2/pignose.calendar.min.css')}}" rel="stylesheet">
-    <link href="{{ asset('css/lib/chartist/chartist.min.css')}}" rel="stylesheet">
-    <link href="{{ asset('css/lib/font-awesome.min.css')}}" rel="stylesheet">
-    <link href="{{ asset('css/lib/themify-icons.css')}}" rel="stylesheet">
-    <link href="{{ asset('css/lib/owl.carousel.min.css')}}" rel="stylesheet" />
-    <link href="{{ asset('css/lib/owl.theme.default.min.css')}}" rel="stylesheet" />
-    <link href="{{ asset('css/lib/weather-icons.css')}}" rel="stylesheet" />
-    <link href="{{ asset('css/lib/menubar/sidebar.css')}}" rel="stylesheet">
-    <link href="{{ asset('css/lib/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{ asset('css/lib/helper.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/lib/calendar2/pignose.calendar.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/lib/chartist/chartist.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/lib/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/lib/themify-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/lib/owl.carousel.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/lib/owl.theme.default.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/lib/weather-icons.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/lib/menubar/sidebar.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/lib/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/lib/helper.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/dashboardadmin.css') }}" type="text/css">
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
 </head>
 
 <body>
@@ -33,27 +39,28 @@
             <div class="nano-content">
                 <ul>
                     <div class="logo"><a href="index.html">
-                            <!-- <img src="images/logo.png" alt="" /> --><span>CAR CARE | Admin</span></a></div>
+                            <!-- <img src="images/logo.png" alt="" /> --><span>CAR CARE | Admin</span>
+                        </a></div>
                     <li class="label">Main</li>
-                    <li><a href="{{ route('adminformbook') }}" class="sidebar-sub-toggle"><i class="ti-home"></i> Dashboard 
+                    <li><a href="{{ route('adminformbook') }}"><i class="ti-home"></i> Dashboard </a>
                     </li>
                     <li><a class="sidebar-sub-toggle"><i class="ti-layout"></i> Form <span
-                        class="sidebar-collapse-icon ti-angle-down"></span></a>
-                     <ul>
+                                class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
                             <li><a href="{{ route('adminformbook') }}">Booking</a></li>
                             <li><a href="{{ route('adminformshop') }}">Shop</a></li>
-                    </ul>
-                </li>
+                        </ul>
+                    </li>
                     <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid2"></i> Table <span
                                 class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
                             <li><a href="page-login.html">User</a></li>
                             <li><a href="{{ route('admintablebook') }}">Customer Booking</a></li>
                             <li><a href="{{ route('admintableservice') }}">Service</a></li>
-                            <li><a href="{{route('admintableshop')}}">Shop</a></li>
+                            <li><a href="{{ route('admintableshop') }}">Shop</a></li>
                         </ul>
                     </li>
-                    <li><a><i class="ti-close"></i> Logout</a></li>
+                    <li><a id="logout" href="javascript:DoPost()"><i class="ti-close"></i> Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -123,90 +130,59 @@
                     <!-- /# column -->
                 </div>
                 <!-- /# row -->
-                <section id="main-content">
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-money color-success border-success"></i>
-                                    </div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">Total Profit</div>
-                                        <div class="stat-digit">1,012</div>
-                                    </div>
-                                </div>
-                            </div>
+                <header class="masthead bg-primary text-white text-center">
+                    <div class="container d-flex align-items-center flex-column">
+                        <!-- Masthead Avatar Image-->
+                        <!-- Masthead Heading-->
+                        <h1 class="masthead-heading text-uppercase mb-0">CAR CARE | Admin Dashboard</h1>
+                        <!-- Icon Divider-->
+                        <div class="divider-custom divider-light">
+                            <div class="divider-custom-line"></div>
+                            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                            <div class="divider-custom-line"></div>
                         </div>
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-user color-primary border-primary"></i>
-                                    </div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">New Customer</div>
-                                        <div class="stat-digit">961</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-layout-grid2 color-pink border-pink"></i>
-                                    </div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">Active Projects</div>
-                                        <div class="stat-digit">770</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-link color-danger border-danger"></i></div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">Referral</div>
-                                        <div class="stat-digit">2,781</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Masthead Subheading-->
+                        <p class="masthead-subheading font-weight-light mb-0" style="color: whitesmoke">WELCOME ADMIN
+                        </p>
                     </div>
-
-                </section>
+                </header>
             </div>
         </div>
     </div>
 
     <!-- jquery vendor -->
-    <script src="{{ asset('js/lib/jquery.min.js')}}"></script>
-    <script src="{{ asset('js/lib/jquery.nanoscroller.min.js')}}"></script>
+    <script src="{{ asset('js/lib/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/lib/jquery.nanoscroller.min.js') }}"></script>
     <!-- nano scroller -->
-    <script src="{{ asset('js/lib/menubar/sidebar.js')}}"></script>
-    <script src="{{ asset('js/lib/preloader/pace.min.js')}}"></script>
+    <script src="{{ asset('js/lib/menubar/sidebar.js') }}"></script>
+    <script src="{{ asset('js/lib/preloader/pace.min.js') }}"></script>
     <!-- sidebar -->
 
-    <script src="{{ asset('js/lib/bootstrap.min.js')}}"></script>
-    <script src="{{ asset('js/scripts.js')}}"></script>
+    <script src="{{ asset('js/lib/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/scripts.js') }}"></script>
     <!-- bootstrap -->
 
-    <script src="{{ asset('js/lib/calendar-2/moment.latest.min.js')}}"></script>
-    <script src="{{ asset('js/lib/calendar-2/pignose.calendar.min.js')}}"></script>
-    <script src="{{ asset('js/lib/calendar-2/pignose.init.js')}}"></script>
+    <script src="{{ asset('js/lib/calendar-2/moment.latest.min.js') }}"></script>
+    <script src="{{ asset('js/lib/calendar-2/pignose.calendar.min.js') }}"></script>
+    <script src="{{ asset('js/lib/calendar-2/pignose.init.js') }}"></script>
 
 
-    <script src="{{ asset('js/lib/weather/jquery.simpleWeather.min.js')}}"></script>
-    <script src="{{ asset('js/lib/weather/weather-init.js')}}"></script>
-    <script src="{{ asset('js/lib/circle-progress/circle-progress.min.js')}}"></script>
-    <script src="{{ asset('js/lib/circle-progress/circle-progress-init.js')}}"></script>
-    <script src="{{ asset('js/lib/chartist/chartist.min.js')}}"></script>
-    <script src="{{ asset('js/lib/sparklinechart/jquery.sparkline.min.js')}}"></script>
-    <script src="{{ asset('js/lib/sparklinechart/sparkline.init.js')}}"></script>
-    <script src="{{ asset('js/lib/owl-carousel/owl.carousel.min.js')}}"></script>
-    <script src="{{ asset('js/lib/owl-carousel/owl.carousel-init.js')}}"></script>
+    <script src="{{ asset('js/lib/weather/jquery.simpleWeather.min.js') }}"></script>
+    <script src="{{ asset('js/lib/weather/weather-init.js') }}"></script>
+    <script src="{{ asset('js/lib/circle-progress/circle-progress.min.js') }}"></script>
+    <script src="{{ asset('js/lib/circle-progress/circle-progress-init.js') }}"></script>
+    <script src="{{ asset('js/lib/chartist/chartist.min.js') }}"></script>
+    <script src="{{ asset('js/lib/sparklinechart/jquery.sparkline.min.js') }}"></script>
+    <script src="{{ asset('js/lib/sparklinechart/sparkline.init.js') }}"></script>
+    <script src="{{ asset('js/lib/owl-carousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('js/lib/owl-carousel/owl.carousel-init.js') }}"></script>
     <!-- scripit init-->
-    <script src="{{ asset('js/dashboard2.js')}}"></script>
+    <script src="{{ asset('js/dashboard2.js') }}"></script>
+    <script>
+        function DoPost(){
+            $.post({{route('logout')}});
+        }
+    </script>
 </body>
 
 </html>

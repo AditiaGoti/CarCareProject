@@ -73,5 +73,49 @@ class BookingController extends Controller
         $data = booking::all();
         return view('admin.tableservice', ['data' => $data]);
     }
+    public function addservice(Request $request)
+    {
+        $validated = Validator::make($request->all(), [
+            'id' => 'required',
+            'Tempat' => 'required',
+            'deskripsi' => 'required',
+            'price' => 'required',
+        ]);
+        if ($validated->fails()) {
+            return redirect()->back()->with(['pesan' => $validated->errors()]);
+        }
+        if ($order = booking::create($request->all())){
+            return redirect()->back()->with([
+                'pesan' => 'Data berhasil ditambahkan'
+            ]);
+        }else{
+            return redirect()->back()->with([
+                'pesan' => 'Data gagal Ditambahkan'
+            ]);
+        }
+            
+    }
+
+    public function add(Request $request){
+        $data= $request->except(['_token']);
+        booking::insert($data);
+        return redirect()->back()->with([
+            'pesan' => 'Data berhasil ditambahkan'
+        ]);
+    }
+  public function edit($id){
+    $data= booking::findOrfail($id);
+    return view('editbook')->with([
+        'data' => $data
+        ]
+    );
+  }
+
+  public function destroyService($id){
+    $data = booking::findOrfail($id);
+    $data->delete();
+    return redirect()->back()->with([
+        'pesan' => 'Data berhasil dihapus'
+    ]);  }
    
 }

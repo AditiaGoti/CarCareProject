@@ -126,6 +126,7 @@
               <div class="row justify-content-center">
                   <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Table Service</p>
                   <div class="table-responsive">
+                    @include('notification')
                     <table id="example" class="table table-striped table-bordered" style="width:100%">
                       <thead>
                           <tr>
@@ -133,6 +134,7 @@
                             <th><strong>Tempat</strong></th>
                             <th><strong>Deskripsi</strong></th>
                             <th><strong>Harga</strong></th>
+                            <th><strong>Action</strong></th>
                           </tr>
                       </thead>
                       <tbody>
@@ -142,6 +144,13 @@
                             <td>{{ $item->Tempat}}</td>
                             <td>{{ $item->deskripsi}}</td>
                             <td>{{ $item->price}}</td>
+                            <td>
+                                <!--<a href="{{url('')}}" class="btn btn-warning">Update</a>-->
+                                <a href="tableservice-destroy/{{$item->id}}" class="btn btn-danger">Delete</a>
+                                {{-- <form method="POST" action="{{route(delete.service)}}">
+
+                                </form> --}}
+                              </td>
                           </tr>
                           @endforeach
                       </tbody>

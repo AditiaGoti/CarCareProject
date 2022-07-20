@@ -11,5 +11,9 @@ class booking extends Model
     
     protected $table = 'booking';
     protected $fillable =['id','Tempat','deskripsi','price'];
+
+    public function add(){
+        return $this->belongsTo(booking::class, 'id', 'id');
+    }
   
 }

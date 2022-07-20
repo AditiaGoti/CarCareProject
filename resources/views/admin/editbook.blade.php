@@ -28,66 +28,73 @@
 
 <body>
 
-    <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
-        <div class="nano">
-            <div class="nano-content">
-                <ul>
-                    <div class="logo"><a href="index.html">
-                            <!-- <img src="images/logo.png" alt="" /> --><span>CAR CARE | Admin</span></a></div>
-                    <li class="label">Main</li>
-                    <li><a href="{{ route('adminformbook') }}" ><i class="ti-home"></i> Dashboard </a>
-                    </li>
-                    <li><a class="sidebar-sub-toggle"><i class="ti-layout"></i> Form <span
-                        class="sidebar-collapse-icon ti-angle-down"></span></a>
-                     <ul>
-                            <li><a href="{{ route('adminformbook') }}">Booking</a></li>
-                            <li><a href="{{ route('adminformshop') }}">Shop</a></li>
+  <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
+    <div class="nano">
+        <div class="nano-content">
+            <ul>
+                <div class="logo"><a href="index.html">
+                        <!-- <img src="images/logo.png" alt="" /> --><span>CAR CARE | Admin</span></a></div>
+                <li class="label">Main</li>
+                <li><a href="{{ route('adminformbook') }}" class="sidebar-sub-toggle"><i class="ti-home"></i> Dashboard 
+                </li>
+                <li><a class="sidebar-sub-toggle"><i class="ti-layout"></i> Form <span
+                    class="sidebar-collapse-icon ti-angle-down"></span></a>
+                 <ul>
+                        <li><a href="{{ route('adminformbook') }}">Booking</a></li>
+                        <li><a href="{{ route('adminformshop') }}">Shop</a></li>
+                </ul>
+            </li>
+                <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid2"></i> Table <span
+                            class="sidebar-collapse-icon ti-angle-down"></span></a>
+                    <ul>
+                        <li><a href="page-login.html">User</a></li>
+                        <li><a href="{{ route('admintablebook') }}">Customer Booking</a></li>
+                        <li><a href="{{ route('admintableservice') }}">Service</a></li>
+                        <li><a href="{{route('admintableshop')}}">Shop</a></li>
                     </ul>
                 </li>
-                    <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid2"></i> Table <span
-                                class="sidebar-collapse-icon ti-angle-down"></span></a>
-                        <ul>
-                            <li><a href="page-login.html">User</a></li>
-                            <li><a href="page-register.html">Booking</a></li>
-                            <li><a href="page-reset-password.html">Shop</a></li>
-                        </ul>
-                    </li>
-                    <li><a><i class="ti-close"></i> Logout</a></li>
-                </ul>
+                <li><a><i class="ti-close"></i> Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    <!-- /# sidebar -->
+    <div class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="float-left">
+                        <div class="hamburger sidebar-toggle">
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
+                    <div class="float-right">
+                        <div class="dropdown dib">
+                            <div class="header-icon" data-toggle="dropdown">
+                                <span class="user-avatar">Admin
+                                    <i class="ti-angle-down f-s-10"></i>
+                                </span>
+                                <div class="drop-down dropdown-profile dropdown-menu dropdown-menu-right">
+                                    <div class="dropdown-content-body">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="ti-power-off"></i>
+                                                    <span>Logout</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <!-- /# sidebar -->
-    <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
-      <div class="nano">
-          <div class="nano-content">
-              <ul>
-                  <div class="logo"><a href="index.html">
-                          <!-- <img src="images/logo.png" alt="" /> --><span>CAR CARE | Admin</span></a></div>
-                  <li class="label">Main</li>
-                  <li><a href="{{ route('adminformbook') }}" class="sidebar-sub-toggle"><i class="ti-home"></i> Dashboard 
-                  </li>
-                  <li><a class="sidebar-sub-toggle"><i class="ti-layout"></i> Form <span
-                      class="sidebar-collapse-icon ti-angle-down"></span></a>
-                   <ul>
-                          <li><a href="{{ route('adminformbook') }}">Booking</a></li>
-                          <li><a href="{{ route('adminformshop') }}">Shop</a></li>
-                  </ul>
-              </li>
-                  <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid2"></i> Table <span
-                              class="sidebar-collapse-icon ti-angle-down"></span></a>
-                      <ul>
-                          <li><a href="page-login.html">User</a></li>
-                          <li><a href="{{ route('admintablebook') }}">Customer Booking</a></li>
-                          <li><a href="{{ route('admintableservice') }}">Service</a></li>
-                          <li><a href="{{route('admintableshop')}}">Shop</a></li>
-                      </ul>
-                  </li>
-                  <li><a><i class="ti-close"></i> Logout</a></li>
-              </ul>
-          </div>
-      </div>
-  </div>
 <section class="vh-100" style="background-color: #eee;">
     <div class="container h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
@@ -97,44 +104,38 @@
               <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
   
-                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Add Item</p>
+                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Add Booking Place</p>
                   @include('notification')
-
-                  <form class="mx-1 mx-md-4" method="POST" action="{{ url('/add-shop') }}">
+                  <form class="mx-1 mx-md-4" method="POST" action="{{ url('/update/'.$data->id) }}">
                     @csrf
+                   
                     <div class="d-flex flex-row align-items-center mb-4">
                       <div class="form-outline flex-fill mb-0">
-                        <label class="form-label" for="form3Example1c">Nama Barang</label>
-                        <input type="text" name="title" class="form-control" />
+                        <label class="form-label" for="form3Example1c">Nama Tempat</label>
+                        <input type="text" name="Tempat" value="{{$data->Tempat}}"class="form-control" />
                       
                       </div>
                     </div>
                     <div class="d-flex flex-row align-items-center mb-4">
+                     
                       <div class="form-outline flex-fill mb-0">
-                        <label class="form-label" for="form3Example1c">Merek Barang</label>
-                        <input type="text" name="merek" class="form-control" />
+                        <label class="form-label" for="form3Example4c">Deskripsi</label>
+                        <textarea type="text" name="deskripsi" value="{{$data->deskripsi}}"class="form-control"></textarea>
                       
                       </div>
                     </div>
+  
   
                     <div class="d-flex flex-row align-items-center mb-4">
                      
                       <div class="form-outline flex-fill mb-0">
                         <label class="form-label" for="form3Example3c">Price</label>
-                        <input type="" name="price" class="form-control" />
+                        <input type="text" name="price" value="{{$data->price}}"class="form-control" />
                         
-                      </div>
-                    </div>  
-                    <div class="d-flex flex-row align-items-center mb-4">
-                     
-                      <div class="form-outline flex-fill mb-0">
-                        <label class="form-label" for="form3Example4c">Deskripsi</label>
-                        <textarea type="text" name="deskripsi" class="form-control"></textarea>
-                      
                       </div>
                     </div>
                     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                      <button type="submit" class="btn btn-primary btn-lg">Save</button>
+                      <button type="submit" class="btn btn-primary btn-lg" >Save</button>
                     </div>
   
                   </form>
@@ -142,7 +143,7 @@
                 </div>
                 <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
   
-                    <img src="{{ asset('img/Car_Care_2.png') }}" class="img-fluid animated" alt="">
+                    <img src="{{ asset('img/Car_Care.png') }}" class="img-fluid animated" alt="">
   
                 </div>
               </div>

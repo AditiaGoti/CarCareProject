@@ -122,6 +122,7 @@ tr:nth-child(even) {
               <div class="row justify-content-center">
                   <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Table Shop</p>
                   <div class="table-responsive">
+                    @include('notification')
                     <table id="example" class="table table-striped table-bordered " style="width:100%">
                       <thead>
                           <tr>
@@ -130,6 +131,7 @@ tr:nth-child(even) {
                             <th><strong>Merek</strong></th>
                             <th><strong>Price</strong></th>
                             <th><strong>Deskripsi</strong></th>
+                            <th><strong>Action</strong></th>
                           </tr>
                       </thead>
                       <tbody>
@@ -140,7 +142,9 @@ tr:nth-child(even) {
                           <th>{{ $item->merek}}</th>
                           <th>{{ $item->price}}</th>
                           <th>{{ $item->deskripsi}}</th>
-                          <th></th>
+                          <th>
+                            <a href="tableshop-destroy/{{$item->id}}" class="btn btn-danger">Delete</a>
+                          </th>
                         </tr>
                         @endforeach
                       </tbody>

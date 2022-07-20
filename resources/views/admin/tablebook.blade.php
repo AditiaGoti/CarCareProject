@@ -128,6 +128,7 @@
                             <th><strong>Price</strong></th>
                             <th><strong>Durasi</strong></th>
                             <th><strong>Total Harga</strong></th>
+                            
                           </tr>
                       </thead>
                       <tbody>

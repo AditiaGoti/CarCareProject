@@ -35,7 +35,7 @@
                 <div class="logo"><a href="index.html">
                         <!-- <img src="images/logo.png" alt="" /> --><span>CAR CARE | Admin</span></a></div>
                 <li class="label">Main</li>
-                <li><a href="{{ route('adminformbook') }}" class="sidebar-sub-toggle"><i class="ti-home"></i> Dashboard 
+                <li><a href="{{ route('admindashboard') }}" ><i class="ti-home"></i> Dashboard </a>
                 </li>
                 <li><a class="sidebar-sub-toggle"><i class="ti-layout"></i> Form <span
                     class="sidebar-collapse-icon ti-angle-down"></span></a>
@@ -105,38 +105,37 @@
                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
   
                   <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Add Booking Place</p>
-  
-                  <form class="mx-1 mx-md-4">
-  
+                  @include('notification')
+                  <form class="mx-1 mx-md-4" method="POST" action="{{ url('/add-service') }}">
+                    @csrf
+                   
                     <div class="d-flex flex-row align-items-center mb-4">
                       <div class="form-outline flex-fill mb-0">
                         <label class="form-label" for="form3Example1c">Nama Tempat</label>
-                        <input type="text" id="form3Example1c" class="form-control" />
+                        <input type="text" name="Tempat" class="form-control" />
                       
                       </div>
                     </div>
+                    <div class="d-flex flex-row align-items-center mb-4">
+                     
+                      <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="form3Example4c">Deskripsi</label>
+                        <textarea type="text" name="deskripsi" class="form-control"></textarea>
+                      
+                      </div>
+                    </div>
+  
   
                     <div class="d-flex flex-row align-items-center mb-4">
                      
                       <div class="form-outline flex-fill mb-0">
                         <label class="form-label" for="form3Example3c">Price</label>
-                        <input type="" id="" class="form-control" />
+                        <input type="text" name="price" class="form-control" />
                         
                       </div>
                     </div>
-  
-                    <div class="d-flex flex-row align-items-center mb-4">
-                     
-                      <div class="form-outline flex-fill mb-0">
-                        <label class="form-label" for="form3Example4c">Deskripsi</label>
-                        <textarea type="text" id="" class="form-control"></textarea>
-                      
-                      </div>
-                    </div>
-  
-  
                     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                      <button type="button" class="btn btn-primary btn-lg">Save</button>
+                      <button type="submit" class="btn btn-primary btn-lg" >Save</button>
                     </div>
   
                   </form>

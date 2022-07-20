@@ -78,4 +78,16 @@ class BarangController extends Controller
         }
             
     }
+    public function add(Request $request){
+        $data= $request->except(['_token']);
+        Shop::insert($data);
+        return redirect()->back()->with([
+            'pesan' => 'data berhasil ditambahkan'
+        ]);    }
+    public function destroyShop($id){
+        $data = Shop::findOrfail($id);
+        $data->delete();
+        return redirect()->back()->with([
+            'pesan' => 'data berhasil dihapus'
+        ]);         }
 }

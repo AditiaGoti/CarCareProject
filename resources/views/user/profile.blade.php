@@ -12,6 +12,8 @@ background: -webkit-linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 
 background: linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238, 1))
 }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -74,8 +76,8 @@ background: linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="{{ route('dashboard') }}">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#services">Services</a></li>
+                    <li><a class="nav-link scrollto " href="{{ route('dashboard') }}">Home</a></li>
+                    <li><a class="nav-link scrollto" href="{{ route('service') }}">Services</a></li>
                     <li><a class="nav-link scrollto" href="#about">About Us</a></li>
                     <li><a class="nav-link   scrollto"href="{{ route('shop.index') }}">Shop</a></li>
                     <li><a class="nav-link"><div style="color:white">{{ Auth::user()->email }}</div></a></li>
@@ -121,11 +123,11 @@ background: linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238
               </div>
               <div class="row g-2">
                 <div class="col mb-2">
-                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(112).webp"
-                    alt="image 1" class="w-100 rounded-3">
+                  <div class="qrcode" id="qrcode"></div>
                 </div>
               </div>
             </div>
+            <a href="" class="btn btn-danger">Logout</a>
           </div>
         </div>
       </div>
@@ -155,7 +157,11 @@ background: linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
 <script src="{{ asset('js/main.js') }}"></script>
-
+<script>
+window.addEventListener("load", () => {
+  var qrc = new QRCode(document.getElementById("qrcode"), "{{ $barang->id . '-' . Auth::user()->name}}");
+});
+</script>
 </body>
 
 </html>
