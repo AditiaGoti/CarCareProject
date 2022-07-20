@@ -127,7 +127,7 @@ background: linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238
                 </div>
               </div>
             </div>
-            <a href="" class="btn btn-danger">Logout</a>
+            <a href="/logout" class="btn btn-danger">Logout</a>
           </div>
         </div>
       </div>

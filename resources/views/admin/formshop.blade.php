@@ -47,7 +47,7 @@
                     <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid2"></i> Table <span
                                 class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
-                            <li><a href="page-login.html">User</a></li>
+                          
                             <li><a href="page-register.html">Booking</a></li>
                             <li><a href="page-reset-password.html">Shop</a></li>
                         </ul>
@@ -77,7 +77,7 @@
                   <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid2"></i> Table <span
                               class="sidebar-collapse-icon ti-angle-down"></span></a>
                       <ul>
-                          <li><a href="page-login.html">User</a></li>
+                        
                           <li><a href="{{ route('admintablebook') }}">Customer Booking</a></li>
                           <li><a href="{{ route('admintableservice') }}">Service</a></li>
                           <li><a href="{{route('admintableshop')}}">Shop</a></li>

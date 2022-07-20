@@ -32,29 +32,25 @@
 						<img src="{{asset('/img/logo.png')}}" style="margin-top:-170px;" alt="">
 					<h3>REGISTRATION</h3>
 					<div class="form-holder">
-						<span class="lnr lnr-envelope" style="color: white;"></span>
-						<input type="text" class="form-control" placeholder="email"  value="{{ old('email') }}">
+						<input style="color: white"type="text" class="form-control" placeholder="email"  value="{{ old('email') }}">
 						@if ($errors->has('email'))
                			<span class="text-danger text-left">{{ $errors->first('email') }}</span>
            				@endif
 					</div>
 					<div class="form-holder">
-						<span class="lnr lnr-user" style="color: white;"></span>
-						<input type="text" class="form-control" placeholder="Username" value="{{ old('username') }}">
+						<input type="text" style="color: white" class="form-control" placeholder="Username" value="{{ old('username') }}">
 						@if ($errors->has('username'))
              		   <span class="text-danger text-left">{{ $errors->first('username') }}</span>
             			@endif
 					</div>
 					<div class="form-holder">
-						<span class="lnr lnr-lock"style="color: white;"></span>
-						<input type="password" class="form-control" placeholder="Password" value="{{ old('password') }}" >
+						<input type="password" style="color: white" class="form-control" placeholder="Password" value="{{ old('password') }}" >
 						@if ($errors->has('password'))
                			<span class="text-danger text-left">{{ $errors->first('password') }}</span>
             			@endif
 					</div>
 					<div class="form-holder">
-						<span class="lnr lnr-lock" style="color: white;"></span>
-						<input type="password" class="form-control" placeholder="Confirm Password" value="{{ old('password_confirmation') }}">
+						<input type="password" class="form-control" style="color: white"placeholder="Confirm Password" value="{{ old('password_confirmation') }}">
 						@if ($errors->has('password_confirmation'))
               		  	<span class="text-danger text-left">{{ $errors->first('password_confirmation') }}</span>
          			   @endif

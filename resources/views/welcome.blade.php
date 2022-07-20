@@ -65,7 +65,7 @@
                 <ul>
                     <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                     <li><a class="nav-link scrollto" href="#services">Services</a></li>
-                    <li><a class="nav-link scrollto" href="#about">About Us</a></li>
+                    <li><a class="nav-link scrollto" href="#aboutus">About Us</a></li>
                     <li><a class="nav-link   scrollto" href="{{ route('login') }}">Shop</a></li>
                     
             @if (Route::has('login'))
@@ -190,7 +190,7 @@
             </div>
         </section><!-- End What We Do Section -->
 
-        <section id="hero" class="d-flex align-items-center">
+        <section id="aboutus" class="d-flex align-items-center">
 
             <div class="container">
                 <div class="row">

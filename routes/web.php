@@ -39,7 +39,7 @@ Route::group(['middleware' => 'auth'], function () {
 //booking
 Route::get('booking', [BookingController::class, 'index'])->name('booking');
 Route::get('bookingform/{id}', [BookingController::class, 'detail'])->name('booking.form');
-Route::match(['get', 'post'], '/order', [BookingController::class, 'order'])->name('ordering');
+Route::match(['get', 'post'], '/order-book', [BookingController::class, 'order'])->name('ordering.book');
 
 //userprofile
 Route::get('userprofile/{id}', [BookingController::class, 'profile'])->name('user.profile');

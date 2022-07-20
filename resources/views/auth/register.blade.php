@@ -36,26 +36,26 @@
             <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
             <div class="form-holder">
-            <span class="lnr lnr-envelope" style="color: white;"></span>
+           
                 <x-label for="name" :value="__('Name')" />
 
-                <x-input id="name" class="form-control" type="text" name="name" :value="old('name')" required autofocus />
+                <x-input id="name" class="form-control" style="color: white" type="text" name="name" :value="old('name')" required autofocus />
             </div>
 
             <!-- Email Address -->
             <div class="form-holder">
-            <span class="lnr lnr-envelope" style="color: white;"></span>
+            
                 <x-label for="email" :value="__('Email')" />
 
-                <x-input id="email" class="form-control" type="email" name="email" :value="old('email')" required />
+                <x-input id="email" style="color: white" class="form-control" type="email" name="email" :value="old('email')" required />
             </div>
 
             <!-- Password -->
             <div class="form-holder">
-            <span class="lnr lnr-envelope" style="color: white;"></span>
+          
                 <x-label for="password" :value="__('Password')" />
 
-                <x-input id="password" class="form-control"
+                <x-input style="color: white" id="password" class="form-control"
                                 type="password"
                                 name="password"
                                 required autocomplete="new-password" />
@@ -63,10 +63,10 @@
 
             <!-- Confirm Password -->
             <div class="form-holder">
-            <span class="lnr lnr-envelope" style="color: white;"></span>
+         
                 <x-label for="password_confirmation" :value="__('Confirm Password')" />
 
-                <x-input id="password_confirmation" class="form-control"
+                <x-input style="color: white" id="password_confirmation" class="form-control"
                                 type="password"
                                 name="password_confirmation" required />
             </div>

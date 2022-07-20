@@ -162,7 +162,7 @@
                             <div class="md-form mb-4">
                                 <label data-error="wrong" data-success="right" for="form2">Alamat</label>
                                 <input type="text" id="form2" name="alamat" class="form-control validate"
-                                    >
+                                   required >
                             </div>
                         </div>
                         <div class="modal-footer d-flex justify-content-center">

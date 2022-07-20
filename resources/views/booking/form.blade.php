@@ -85,10 +85,9 @@
                             </p>
                         </div>
                     </div>
-                    @include('notification')
                     <div class="col-md-4 col-md-pull-7" style="margin-top: 40px; margin-left: 70px" >
                         <div class="booking-form">
-                            <form action="{{ route('ordering') }}" method="post" >
+                            <form action="{{ route('ordering.book') }}" method="post" >
                                 @csrf
                                 <input type="hidden" value="{{$id}}" name="id"/>
                                 <div class="form-group">
@@ -121,11 +120,11 @@
                                 </div>
                                 <div class="form-group">
                                     <span class="form-label">Durasi</span>
-                                    <input class="form-control prc" name="durasi"type="text" placeholder="">
+                                    <input class="form-control prc" name="durasi" type="text" placeholder="">
                                 </div>
                                 <div class="form-group">
                                     <span class="form-label">TOTAL Harga</span>
-                                    <input class="form-control prc" name="totalharga" type="text" value="$jumlah">
+                                    <input class="form-control prc" name="totalharga" type="text" >
                                 </div>
                                 <div class="form-btn text-center">
                                     <button class="submit-btn" value="Order">Book!!</button>
