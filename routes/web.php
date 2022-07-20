@@ -18,16 +18,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('service', function () {
+    return view('service');
+})->name('service');
 //shop
-Route::group(['middleware'=>'auth'],function(){
+Route::group(['middleware' => 'auth'], function () {
     Route::get('/shop', [BarangController::class, 'index'])->name('shop.index');
     Route::get('/shopdetail/{id}', [BarangController::class, 'detail'])->name('shop.detail');
     Route::get('/payment/{id}', [BarangController::class, 'payment'])->name('shop.payment');
-    Route::post('/order',[BarangController::class,'order'])->name('ordering');
+    Route::post('/order', [BarangController::class, 'order'])->name('ordering');
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->middleware(['auth'])->name('dashboard');
-    
+
     Route::get('payment', function () {
         return view('payment');
     })->name('payment');
@@ -36,7 +39,7 @@ Route::group(['middleware'=>'auth'],function(){
 //booking
 Route::get('booking', [BookingController::class, 'index'])->name('booking');
 Route::get('bookingform/{id}', [BookingController::class, 'detail'])->name('booking.form');
-Route::match(['get','post'],'/order',[BookingController::class,'order'])->name('ordering');
+Route::match(['get', 'post'], '/order', [BookingController::class, 'order'])->name('ordering');
 
 //userprofile
 Route::get('userprofile/{id}', [BookingController::class, 'profile'])->name('user.profile');
@@ -63,4 +66,14 @@ Route::get('tableshop', [BarangController::class, 'tableshop'])->name('admintabl
 Route::get('tableservice', [BookingController::class, 'tableservice'])->name('admintableservice');
 
 
-require __DIR__.'/auth.php';
+//add
+Route::post('/add-service', [BookingController::class, 'add'])->name('add.service');
+Route::post('/add-shop', [BarangController::class, 'add'])->name('add.shop');
+
+//edit
+//Route::get('/edit/{$id}',[BookingController::class,'edit'])->name('edit');
+
+//delete
+Route::get('/tableservice-destroy/{id}', [BookingController::class, 'destroyService'])->name('delete.service');
+Route::get('/tableshop-destroy/{id}', [BarangController::class, 'destroyShop'])->name('delete.shop');
+require __DIR__ . '/auth.php';
