@@ -3,22 +3,25 @@
         <x-auth-session-status class="mb-4" :status="session('status')" />
 
         <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
         <body class="img" style="background-image: url('/img/backgorund.png');">
 	<section class="ftco-section">
 		<div class="row">
 			<img src="{{asset('/img/logo.png')}}" class="img-fluid" style="margin-top:-300px" alt="">
+
 	</div>
 		<div class="container" style=" margin-top:-150px;border: 20px solid #252540; border-style: ridge; border-radius:25px; width: 500px; background-color: rgba(36, 36, 137, 0.55);">
 			<div class="row justify-content-center">
 					<img src="{{asset('/img/logo.png')}}" class="img-fluid" style="margin-top: -200px; margin-left: -20px; padding-top:20px;" alt="">
 			</div>
+
 			<div class="row justify-content-center">
 				<div class="col-md-6 col-lg-4" style="margin-top:-160px;">
 					<div class="login-wrap p-0">
 		      	<h3 class="mb-4 text-center" style="font-weight: bold;">LOGIN</h3>
-        <form method="POST" action="{{ route('login') }}" style="margin-left: -100px; width: 350px; padding-top: 10px;">
+
+                <form method="POST" action="{{ route('login') }}" style="margin-left: -100px; width: 350px; padding-top: 10px;">
             @csrf
+            <x-auth-validation-errors class="mb-4 inline" :errors="$errors" />
 
             <!-- Email Address -->
             <div class="form-group" style="padding-top: 10px;">

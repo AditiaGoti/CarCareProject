@@ -16,7 +16,6 @@
 		<link rel="stylesheet" href="{{asset('css/regis.css')}}">
     </head>
         <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
         <div class="wrapper">
 			<div class="row">
 				<div class="col-sm-4">
@@ -29,11 +28,13 @@
 				</div>
 			<div class="col-sm-8">
 			<div class="inner">
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('register') }}" class="text-white">
             @csrf
             <img src="{{asset('/img/logo.png')}}" style="margin-top:-170px;" alt="">
 					<h3>REGISTRATION</h3>
             <!-- Name -->
+            <x-auth-validation-errors class="mb-4" :errors="$errors" />
+
             <div class="form-holder">
             <span class="lnr lnr-envelope" style="color: white;"></span>
                 <x-label for="name" :value="__('Name')" />
@@ -71,7 +72,7 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                <a class="underline text-sm text-white hover:text-white" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
                 </a>
 

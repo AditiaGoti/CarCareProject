@@ -60,7 +60,7 @@
                             <li><a href="{{ route('admintableshop') }}">Shop</a></li>
                         </ul>
                     </li>
-                    <li><a id="logout" href="javascript:DoPost()"><i class="ti-close"></i> Logout</a></li>
+                    <li><a id="logout" href="/logout"><i class="ti-close"></i> Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -81,21 +81,8 @@
                     <div class="float-right">
                         <div class="dropdown dib">
                             <div class="header-icon" data-toggle="dropdown">
-                                <span class="user-avatar">Admin
-                                    <i class="ti-angle-down f-s-10"></i>
+                                <span class="user-avatar">{{ Auth::user()->name }}</span>
                                 </span>
-                                <div class="drop-down dropdown-profile dropdown-menu dropdown-menu-right">
-                                    <div class="dropdown-content-body">
-                                        <ul>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="ti-power-off"></i>
-                                                    <span>Logout</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -112,7 +99,7 @@
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Hello, <span>Welcome Here</span></h1>
+                                <h1>Hello, <span>Welcome {{ Auth::user()->name  }}</span></h1>
                             </div>
                         </div>
                     </div>
