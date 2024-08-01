@@ -21,14 +21,14 @@
 				<div class="col-sm-4">
 					<div class="row">
 						<div class="col-sm-2">
-						<img src="{{asset('/img/logo.png')}}" style="margin-top: -200px; margin-left: -150px;"class="img-" alt="">
+						<img src="{{asset('/img/logo.png')}}" style="margin-top: -260px; margin-left: -150px;"class="img-" alt="">
 						</div>
 					</div>
 					<img src="{{asset('/img/Car_Care_2.png')}}" class="img-cover"  style="width: 900px; margin-left: -80px; margin-top: -200px;"alt="">
 				</div>
 			<div class="col-sm-8">
 			<div class="inner">
-        <form method="POST" action="{{ route('register') }}" class="text-white">
+        <form method="POST" action="{{ route('register') }}" class="text-white" style="margin-left: 20px;">
             @csrf
             <img src="{{asset('/img/logo.png')}}" style="margin-top:-170px;" alt="">
 					<h3>REGISTRATION</h3>
@@ -48,6 +48,12 @@
                 <x-label for="email" :value="__('Email')" />
 
                 <x-input id="email" style="color: white" class="form-control" type="email" name="email" :value="old('email')" required />
+            </div>
+            <div class="form-holder">
+            
+                <x-label for="no_hp" :value="__('No Telpon')" />
+
+                <x-input id="no_hp" style="color: white" class="form-control" type="text" name="no_hp" :value="old('no_hp')" required />
             </div>
 
             <!-- Password -->

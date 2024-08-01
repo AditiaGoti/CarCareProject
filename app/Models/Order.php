@@ -9,10 +9,16 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Order extends Model
 {
     use HasFactory;
-    protected $table = 'order';
-    protected $fillable =['email','id_barang','title','merek','price','metode','alamat'];
-
-    public function barang(){
-        return $this->belongsTo(Shop::class, 'id_barang', 'id');
-    }
+    protected $table = 'user';
+    protected $fillable = [
+        'uuid',
+        'name',
+        'email',
+        'password',
+        'no_hp',
+        'status'
+    ];
+    // public function barang(){
+    //     return $this->belongsTo(Shop::class, 'id_barang', 'id');
+    // }
 }

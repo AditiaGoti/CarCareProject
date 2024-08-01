@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\BookingController;
 use Illuminate\Support\Facades\Route;
 
@@ -42,7 +43,16 @@ Route::get('bookingform/{id}', [BookingController::class, 'detail'])->name('book
 Route::match(['get', 'post'], '/order-book', [BookingController::class, 'order'])->name('ordering.book');
 
 //userprofile
-Route::get('userprofile/{id}', [BookingController::class, 'profile'])->name('user.profile');
+Route::get('userprofile/{uuid}', [BookingController::class, 'profile'])->name('user.profile');
+
+
+Route::prefix('/user')->group(function () {
+    Route::get('editprofile/{id}', [RegisteredUserController::class, 'profileDetail'])->name('user.editProfile');
+    Route::patch('/{user}', [RegisteredUserController::class, 'updateUser'])->name('updateUser');
+});
+// Route::get('editprofile/{uuid}', function () {
+//     return view('user.editProfile');
+// })->name('editprofile');
 
 //admin
 Route::get('admindashboard', function () {
@@ -53,17 +63,19 @@ Route::get('admindashboard', function () {
 Route::get('adminformbook', function () {
     return view('admin.formbook');
 })->name('adminformbook');
+Route::get('adminEditformbook', function () {
+    return view('admin.editbook');
+})->name('admineditformbook');
 Route::get('adminformshop', function () {
     return view('admin.formshop');
 })->name('adminformshop');
 
 //admintable
-Route::get('tableuser', function () {
-    return view('admin.tableuser');
-})->name('admintableuser');
+
 Route::get('tablebook', [BookingController::class, 'tablebooking'])->name('admintablebook');
-Route::get('tableshop', [BarangController::class, 'tableshop'])->name('admintableshop');
+Route::get('tableuser', [BarangController::class, 'tableuser'])->name('admintableuser');
 Route::get('tableservice', [BookingController::class, 'tableservice'])->name('admintableservice');
+// Route::get('tableuser', [RegisteredUserController::class, 'tableuser'])->name('admintableuser');
 
 
 //add
@@ -71,9 +83,13 @@ Route::post('/add-service', [BookingController::class, 'add'])->name('add.servic
 Route::post('/add-shop', [BarangController::class, 'add'])->name('add.shop');
 
 //edit
-//Route::get('/edit/{$id}',[BookingController::class,'edit'])->name('edit');
+
+Route::get('/editService/{id}', [BookingController::class, 'editService'])->name('editService');
+Route::patch('/updateService/{id}', [BookingController::class, 'updateService'])->name('updateService');
 
 //delete
 Route::get('/tableservice-destroy/{id}', [BookingController::class, 'destroyService'])->name('delete.service');
 Route::get('/tableshop-destroy/{id}', [BarangController::class, 'destroyShop'])->name('delete.shop');
+Route::get('/tablebook-destroy/{id}', [BookingController::class, 'destroyBook'])->name('delete.book');
+
 require __DIR__ . '/auth.php';

@@ -66,7 +66,7 @@
                     <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                     <li><a class="nav-link scrollto" href="#services">Services</a></li>
                     <li><a class="nav-link scrollto" href="#aboutus">About Us</a></li>
-                    <li><a class="nav-link   scrollto" href="{{ route('login') }}">Shop</a></li>
+                    <li><a class="nav-link   scrollto" href="{{ route('login') }}">Booking</a></li>
                     
             @if (Route::has('login'))
                     @auth

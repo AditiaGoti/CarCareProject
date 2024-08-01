@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreateTableCustomerBooking extends Migration
 {
@@ -15,7 +16,8 @@ class CreateTableCustomerBooking extends Migration
     {
         Schema::create('table_customer_booking', function (Blueprint $table) {
             $table->id();
-            $table->string('email')->unique();
+            $table->uuid('uuid');
+            $table->string('email');
             $table->string('Tempat',100);
             $table->string('type',100);
             $table->integer('price')->unsigned;
@@ -23,6 +25,8 @@ class CreateTableCustomerBooking extends Migration
             $table->integer('totalharga')->unsigned;
             $table->timestamps();
         });
+        DB::statement('ALTER TABLE table_customer_booking AUTO_INCREMENT = 2;');
+        
     }
 
     /**

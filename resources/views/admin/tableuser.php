@@ -35,17 +35,21 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <style>
-  h2 {
-    position: relative;
-    padding: 10;
-    margin: 10;
-    font-family: "Raleway", sans-serif;
-    font-weight: 300;
-    font-size: 40px;
-    c color: red;
-    -webkit-transition: all 0.4s ease 0s;
-    -o-transition: all 0.4s ease 0s;
-    transition: all 0.4s ease 0s;
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td,
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
   }
 </style>
 
@@ -63,14 +67,14 @@
           <li><a class="sidebar-sub-toggle"><i class="ti-layout"></i> Form <span class="sidebar-collapse-icon ti-angle-down"></span></a>
             <ul>
               <li><a href="{{ route('adminformbook') }}">Booking</a></li>
-              <!-- <li><a href="{{ route('adminformshop') }}">Shop</a></li> -->
+              <li><a href="{{ route('adminformshop') }}">Shop</a></li>
             </ul>
           </li>
           <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid2"></i> Table <span class="sidebar-collapse-icon ti-angle-down"></span></a>
             <ul>
 
               <li><a href="{{route('admintablebook')}}">Booking</a></li>
-              <li><a href="{{route('admintableuser')}}">User</a></li>
+              <!-- <li><a href="{{route('admintableshop')}}">Shop</a></li> -->
             </ul>
           </li>
           <li><a><i class="ti-close"></i> Logout</a></li>
@@ -78,6 +82,7 @@
       </div>
     </div>
   </div>
+  <!-- /# sidebar -->
   <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
     <div class="nano">
       <div class="nano-content">
@@ -85,48 +90,24 @@
           <div class="logo"><a href="index.html">
               <!-- <img src="images/logo.png" alt="" /> --><span>CAR CARE | Admin</span></a></div>
           <li class="label">Main</li>
-          <li><a href="{{ route('admindashboard') }}" class="sidebar-sub-toggle"><i class="ti-home"></i> Dashboard
+          <li><a href="{{ route('adminformbook') }}" class="sidebar-sub-toggle"><i class="ti-home"></i> Dashboard
           </li>
           <li><a class="sidebar-sub-toggle"><i class="ti-layout"></i> Form <span class="sidebar-collapse-icon ti-angle-down"></span></a>
             <ul>
-              <li><a href="{{ route('adminformbook') }}">Tambah Lahan Penyewaan</a></li>
-              <!-- <li><a href="{{ route('adminformshop') }}">Shop</a></li> -->
+              <li><a href="{{ route('adminformbook') }}">Booking</a></li>
+              <li><a href="{{ route('adminformshop') }}">Shop</a></li>
             </ul>
           </li>
           <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid2"></i> Table <span class="sidebar-collapse-icon ti-angle-down"></span></a>
             <ul>
 
-              <li><a href="{{ route('admintablebook') }}">Data Penyewaan</a></li>
-              <li><a href="{{ route('admintableservice') }}">Lahan Penyewaan</a></li>
-              <li><a href="{{route('admintableuser')}}">Data Pelanggan</a></li>
+              <li><a href="{{ route('admintablebook') }}">Customer Booking</a></li>
+              <li><a href="{{ route('admintableservice') }}">Service</a></li>
+              <li><a href="{{route('admintableshop')}}">Shop</a></li>
             </ul>
           </li>
-          <li><a><i class="ti-close" href="/logout"></i> Logout</a></li>
+          <li><a><i class="ti-close"></i> Logout</a></li>
         </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="header">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="float-left">
-            <div class="hamburger sidebar-toggle">
-              <span class="line"></span>
-              <span class="line"></span>
-              <span class="line"></span>
-            </div>
-          </div>
-          <div class="float-right">
-            <div class="dropdown dib">
-              <div class="header-icon" data-toggle="dropdown">
-                <span class="user-avatar">{{ Auth::user()->name }}</span>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -137,33 +118,28 @@
           <div class="card text-black" style="border-radius: 25px;">
             <div class="card-body p-md-5">
               <div class="row justify-content-center">
-                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Tabel Data Penyewaan</p>
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Table User</p>
                 <div class="table-responsive">
-                  <table id="example" class="table table-striped table-bordered" style="width:100%">
+                  @include('notification')
+                  <table id="example" class="table table-striped table-bordered " style="width:100%">
                     <thead>
                       <tr>
                         <th><strong>No</strong></th>
+                        <th><strong>Nama</strong></th>
                         <th><strong>Email</strong></th>
-                        <th><strong>Tempat</strong></th>
-                        <th><strong>Type</strong></th>
-                        <th><strong>Price</strong></th>
-                        <th><strong>Durasi</strong></th>
-                        <th><strong>Total Harga</strong></th>
+                        <th><strong>No Telp</strong></th>
                         <th><strong>Action</strong></th>
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach ($data as $index => $item)
+                      @foreach ($user as $item)
                       <tr>
-                        <td>{{ $index + 1 }}</td>
+                        <td>{{ $item->id}}</td>
+                        <td>{{ $item->name}}</td>
                         <td>{{ $item->email}}</td>
-                        <td>{{ $item->Tempat}}</td>
-                        <td>{{ $item->type}}</td>
-                        <td>{{ $item->price}}</td>
-                        <td>{{ $item->durasi}}</td>
-                        <td>{{ $item->totalharga}}</td>
+                        <td>{{ $item->no_hp}}</td>
                         <th>
-                          <a href="tablebook-destroy/{{$item->id}}" class="btn btn-danger">Delete</a>
+                          <a href="tableshop-destroy/{{$item->id}}" class="btn btn-danger">Delete</a>
                         </th>
                       </tr>
                       @endforeach

@@ -2,100 +2,85 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CAR CARE : Admin Dashboard</title>
-    <!-- ================= Favicon ================== -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CAR CARE : Admin Dashboard</title>
+  <!-- ================= Favicon ================== -->
 
-      <!-- Favicons -->
+  <!-- Favicons -->
 
-      <link href="{{ asset('/img/Car_care__3.png') }}" rel="icon">
-      <link href="{{ asset('/img/logo.png') }}" rel="apple-touch-icon">
-    <!-- Styles -->
-    <link href="{{ asset('css/lib/calendar2/pignose.calendar.min.css')}}" rel="stylesheet">
-    <link href="{{ asset('css/lib/chartist/chartist.min.css')}}" rel="stylesheet">
-    <link href="{{ asset('css/lib/font-awesome.min.css')}}" rel="stylesheet">
-    <link href="{{ asset('css/lib/themify-icons.css')}}" rel="stylesheet">
-    <link href="{{ asset('css/lib/owl.carousel.min.css')}}" rel="stylesheet" />
-    <link href="{{ asset('css/lib/owl.theme.default.min.css')}}" rel="stylesheet" />
-    <link href="{{ asset('css/lib/weather-icons.css')}}" rel="stylesheet" />
-    <link href="{{ asset('css/lib/menubar/sidebar.css')}}" rel="stylesheet">
-    <link href="{{ asset('css/lib/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{ asset('css/lib/helper.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/admin.css') }}" type="text/css">
+  <link href="{{ asset('/img/Car_care__3.png') }}" rel="icon">
+  <link href="{{ asset('/img/logo.png') }}" rel="apple-touch-icon">
+  <!-- Styles -->
+  <link href="{{ asset('css/lib/calendar2/pignose.calendar.min.css')}}" rel="stylesheet">
+  <link href="{{ asset('css/lib/chartist/chartist.min.css')}}" rel="stylesheet">
+  <link href="{{ asset('css/lib/font-awesome.min.css')}}" rel="stylesheet">
+  <link href="{{ asset('css/lib/themify-icons.css')}}" rel="stylesheet">
+  <link href="{{ asset('css/lib/owl.carousel.min.css')}}" rel="stylesheet" />
+  <link href="{{ asset('css/lib/owl.theme.default.min.css')}}" rel="stylesheet" />
+  <link href="{{ asset('css/lib/weather-icons.css')}}" rel="stylesheet" />
+  <link href="{{ asset('css/lib/menubar/sidebar.css')}}" rel="stylesheet">
+  <link href="{{ asset('css/lib/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{ asset('css/lib/helper.css')}}" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('css/admin.css') }}" type="text/css">
 </head>
 
 <body>
 
   <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
     <div class="nano">
-        <div class="nano-content">
+      <div class="nano-content">
+        <ul>
+          <div class="logo"><a href="index.html">
+              <!-- <img src="images/logo.png" alt="" /> --><span>CAR CARE | Admin</span></a></div>
+          <li class="label">Main</li>
+          <li><a href="{{ route('admindashboard') }}"><i class="ti-home"></i> Dashboard </a>
+          </li>
+          <li><a class="sidebar-sub-toggle"><i class="ti-layout"></i> Form <span class="sidebar-collapse-icon ti-angle-down"></span></a>
             <ul>
-                <div class="logo"><a href="index.html">
-                        <!-- <img src="images/logo.png" alt="" /> --><span>CAR CARE | Admin</span></a></div>
-                <li class="label">Main</li>
-                <li><a href="{{ route('admindashboard') }}" ><i class="ti-home"></i> Dashboard </a>
-                </li>
-                <li><a class="sidebar-sub-toggle"><i class="ti-layout"></i> Form <span
-                    class="sidebar-collapse-icon ti-angle-down"></span></a>
-                 <ul>
-                        <li><a href="{{ route('adminformbook') }}">Booking</a></li>
-                        <li><a href="{{ route('adminformshop') }}">Shop</a></li>
-                </ul>
-            </li>
-                <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid2"></i> Table <span
-                            class="sidebar-collapse-icon ti-angle-down"></span></a>
-                    <ul>
-                      
-                        <li><a href="{{ route('admintablebook') }}">Customer Booking</a></li>
-                        <li><a href="{{ route('admintableservice') }}">Service</a></li>
-                        <li><a href="{{route('admintableshop')}}">Shop</a></li>
-                    </ul>
-                </li>
-                <li><a><i class="ti-close"></i> Logout</a></li>
+              <li><a href="{{ route('adminformbook') }}">Tambah Lahan Penyewaan</a></li>
+              <!-- <li><a href="{{ route('adminformshop') }}">Shop</a></li> -->
             </ul>
-        </div>
+          </li>
+          <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid2"></i> Table <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+            <ul>
+
+              <li><a href="{{ route('admintablebook') }}">Data Penyewaan</a></li>
+              <li><a href="{{ route('admintableservice') }}">Lahan Penyewaan</a></li>
+              <li><a href="{{route('admintableuser')}}">Data Pelanggan</a></li>
+            </ul>
+          </li>
+          <li><a><i class="ti-close" href="/logout"></i> Logout</a></li>
+        </ul>
+      </div>
     </div>
-</div>
-    <!-- /# sidebar -->
-    <div class="header">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="float-left">
-                        <div class="hamburger sidebar-toggle">
-                            <span class="line"></span>
-                            <span class="line"></span>
-                            <span class="line"></span>
-                        </div>
-                    </div>
-                    <div class="float-right">
-                        <div class="dropdown dib">
-                            <div class="header-icon" data-toggle="dropdown">
-                                <span class="user-avatar">Admin
-                                    <i class="ti-angle-down f-s-10"></i>
-                                </span>
-                                <div class="drop-down dropdown-profile dropdown-menu dropdown-menu-right">
-                                    <div class="dropdown-content-body">
-                                        <ul>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="ti-power-off"></i>
-                                                    <span>Logout</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  </div>
+  <!-- /# sidebar -->
+  <div class="header">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="float-left">
+            <div class="hamburger sidebar-toggle">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
             </div>
+          </div>
+          <div class="float-right">
+            <div class="dropdown dib">
+              <div class="header-icon" data-toggle="dropdown">
+                <span class="user-avatar">{{Auth::user()->name}}
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-<section class="vh-100" style="background-color: #eee;">
+  </div>
+  <section class="vh-100" style="background-color: #eee;">
     <div class="container h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-lg-12 col-xl-11">
@@ -103,48 +88,48 @@
             <div class="card-body p-md-5">
               <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-  
-                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Add Booking Place</p>
+
+                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Tambah Lahan Penyewaan</p>
                   @include('notification')
                   <form class="mx-1 mx-md-4" method="POST" action="{{ url('/add-service') }}">
                     @csrf
-                   
+
                     <div class="d-flex flex-row align-items-center mb-4">
                       <div class="form-outline flex-fill mb-0">
                         <label class="form-label" for="form3Example1c">Nama Tempat</label>
-                        <input type="text" name="Tempat" class="form-control" />
-                      
+                        <input type="text" name="Tempat" class="form-control" required/>
+
                       </div>
                     </div>
                     <div class="d-flex flex-row align-items-center mb-4">
-                     
+
                       <div class="form-outline flex-fill mb-0">
                         <label class="form-label" for="form3Example4c">Deskripsi</label>
-                        <textarea type="text" name="deskripsi" class="form-control"></textarea>
-                      
+                        <textarea type="text" name="deskripsi" class="form-control" required></textarea>
+
                       </div>
                     </div>
-  
-  
+
+
                     <div class="d-flex flex-row align-items-center mb-4">
-                     
+
                       <div class="form-outline flex-fill mb-0">
                         <label class="form-label" for="form3Example3c">Price</label>
-                        <input type="text" name="price" class="form-control" />
-                        
+                        <input type="text" name="price" class="form-control" required />
+
                       </div>
                     </div>
                     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                      <button type="submit" class="btn btn-primary btn-lg" >Save</button>
+                      <button type="submit" class="btn btn-primary btn-lg">Save</button>
                     </div>
-  
+
                   </form>
-  
+
                 </div>
                 <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-  
-                    <img src="{{ asset('img/Car_Care.png') }}" class="img-fluid animated" alt="">
-  
+
+                  <img src="{{ asset('img/Car_Care.png') }}" class="img-fluid animated" alt="">
+
                 </div>
               </div>
             </div>

@@ -42,13 +42,13 @@
                             <!-- <img src="images/logo.png" alt="" /> --><span>CAR CARE | Admin</span>
                         </a></div>
                     <li class="label">Main</li>
-                    <li><a href="{{ route('adminformbook') }}"><i class="ti-home"></i> Dashboard </a>
+                    <li><a href="{{ route('admindashboard') }}"><i class="ti-home"></i> Dashboard </a>
                     </li>
                     <li><a class="sidebar-sub-toggle"><i class="ti-layout"></i> Form <span
                                 class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
                             <li><a href="{{ route('adminformbook') }}">Booking</a></li>
-                            <li><a href="{{ route('adminformshop') }}">Shop</a></li>
+                            <!-- <li><a href="{{ route('adminformshop') }}">Shop</a></li> -->
                         </ul>
                     </li>
                     <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid2"></i> Table <span
@@ -56,8 +56,8 @@
                         <ul>
                            
                             <li><a href="{{ route('admintablebook') }}">Customer Booking</a></li>
-                            <li><a href="{{ route('admintableservice') }}">Service</a></li>
-                            <li><a href="{{ route('admintableshop') }}">Shop</a></li>
+                            <li><a href="{{ route('admintableservice') }}">Lahan Booking</a></li>
+                            <li><a href="{{route('admintableuser')}}">User</a></li>
                         </ul>
                     </li>
                     <li><a id="logout" href="/logout"><i class="ti-close"></i> Logout</a></li>

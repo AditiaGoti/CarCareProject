@@ -32,7 +32,7 @@
 						<img src="{{asset('/img/logo.png')}}" style="margin-top:-170px;" alt="">
 					<h3>REGISTRATION</h3>
 					<div class="form-holder">
-						<input style="color: white"type="text" class="form-control" placeholder="email"  value="{{ old('email') }}">
+						<input style="color: white"type="text" class="form-control" placeholder="emailll"  value="{{ old('email') }}">
 						@if ($errors->has('email'))
                			<span class="text-danger text-left">{{ $errors->first('email') }}</span>
            				@endif
@@ -41,6 +41,12 @@
 						<input type="text" style="color: white" class="form-control" placeholder="Username" value="{{ old('username') }}">
 						@if ($errors->has('username'))
              		   <span class="text-danger text-left">{{ $errors->first('username') }}</span>
+            			@endif
+					</div>
+					<div class="form-holder">
+						<input type="number" style="color: white" class="form-control" placeholder="No Handphone" value="{{ old('no_telp') }}">
+						@if ($errors->has('no_telp'))
+             		   <span class="text-danger text-left">{{ $errors->first('no_telp') }}</span>
             			@endif
 					</div>
 					<div class="form-holder">

@@ -9,7 +9,7 @@ class customerbooking extends Model
 {
     use HasFactory;
     protected $table = 'table_customer_booking';
-    protected $fillable =['id','email','Tempat','type','price','durasi','totalharga'];
+    protected $fillable =['id','uuid','email','Tempat','type','price','durasi','totalharga'];
     public function tempat(){
         return $this->belongsTo(booking::class, 'id', 'id');
     }

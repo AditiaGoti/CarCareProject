@@ -24,6 +24,12 @@ class BarangController extends Controller
         $barang = Shop::all();
         return view('admin.tableshop', ['barang' => $barang]);
     }
+    public function tableuser()
+    {
+
+        $barang = Shop::all();
+        return view('admin.tableshop', ['barang' => $barang]);
+    }
     public function detail($id)
     {
 
